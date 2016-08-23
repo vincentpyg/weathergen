@@ -1,7 +1,11 @@
-package org.vg.weathergen.utils;
+package main.java.weathergen.utils;
 
+/***
+ * Fallback constant values
+ * @author vincentg
+ *
+ */
 public class WeatherGeneratorConstants {
-
 	public static final double BASE_TEMPERATURE = 30;
 	public static final double BASE_HUMIDITY = .5;
 	public static final double BASE_HPA = 1013.25; //atmospheric pressure at sea level

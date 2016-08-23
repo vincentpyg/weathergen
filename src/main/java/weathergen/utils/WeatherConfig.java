@@ -1,25 +1,26 @@
-package org.vg.weathergen.utils;
+package main.java.weathergen.utils;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+/***
+ * Used for parsing a configuration file containing assumptions for generating the weather..
+ * Defaults to {@link WeatherGeneratorConstants} when there is a problem loading the config file
+ * @author vincentg
+ *
+ */
 public class WeatherConfig {
 
 	private Properties wProps = null;
 
-	public WeatherConfig(String propertyFile) {
+	public WeatherConfig(File propertyFile) {
 		wProps = new Properties();
 		try {
-			if (propertyFile == null) {
-				wProps.load(this.getClass().getResourceAsStream(propertyFile));
-			} else {
-				wProps.load(new FileInputStream(new File(propertyFile)));
-			}
+				wProps.load(new FileInputStream(propertyFile));
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
-			wProps = null;
 		}
 	}
 
@@ -32,9 +33,9 @@ public class WeatherConfig {
 		try {
 			result = Double
 					.parseDouble(wProps.getProperty("base_temperature"));
-		} catch (NumberFormatException nfe) {
+		} catch (Exception e) {
 			result = WeatherGeneratorConstants.BASE_TEMPERATURE;
-			nfe.printStackTrace();
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -43,9 +44,9 @@ public class WeatherConfig {
 		double result = 0.0;
 		try {
 			result = Double.parseDouble(wProps.getProperty("base_humidity"));
-		} catch (NumberFormatException nfe) {
+		} catch (Exception e) {
 			result = WeatherGeneratorConstants.BASE_HUMIDITY;
-			nfe.printStackTrace();
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -54,9 +55,9 @@ public class WeatherConfig {
 		double result = 0.0;
 		try {
 			result = Double.parseDouble(wProps.getProperty("base_hpa"));
-		} catch (NumberFormatException nfe) {
+		} catch (Exception e) {
 			result = WeatherGeneratorConstants.BASE_HPA;
-			nfe.printStackTrace();
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -65,9 +66,9 @@ public class WeatherConfig {
 		double result = 0.0;
 		try {
 			result = Double.parseDouble(wProps.getProperty("e_constant"));
-		} catch (NumberFormatException nfe) {
+		} catch (Exception e) {
 			result = WeatherGeneratorConstants.E_CONSTANT;
-			nfe.printStackTrace();
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -77,9 +78,9 @@ public class WeatherConfig {
 		try {
 			result = Double.parseDouble(
 					wProps.getProperty("earth_atmosphere_height"));
-		} catch (NumberFormatException nfe) {
+		} catch (Exception e) {
 			result = WeatherGeneratorConstants.EARTH_ATMOSPHERE_HEIGHT;
-			nfe.printStackTrace();
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -89,8 +90,8 @@ public class WeatherConfig {
 		try {
 			result = Double.parseDouble(wProps.getProperty("temp_elevation_change_sunny_unit",
 					"" + WeatherGeneratorConstants.TEMP_ELEVATION_CHANGE_SUNNY_UNIT));
-		} catch (NumberFormatException nfe) {
-			nfe.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -100,8 +101,8 @@ public class WeatherConfig {
 		try {
 			result = Double.parseDouble(wProps.getProperty("temp_elevation_change_sunny_change",
 					"" + WeatherGeneratorConstants.TEMP_ELEVATION_CHANGE_SUNNY_CHANGE));
-		} catch (NumberFormatException nfe) {
-			nfe.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -111,8 +112,8 @@ public class WeatherConfig {
 		try {
 			result = Double.parseDouble(wProps.getProperty("temp_elevation_change_snowy_unit",
 					"" + WeatherGeneratorConstants.TEMP_ELEVATION_CHANGE_SNOWY_UNIT));
-		} catch (NumberFormatException nfe) {
-			nfe.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -122,8 +123,8 @@ public class WeatherConfig {
 		try {
 			result = Double.parseDouble(wProps.getProperty("temp_elevation_change_snowy_change",
 					"" + WeatherGeneratorConstants.TEMP_ELEVATION_CHANGE_SNOWY_CHANGE));
-		} catch (NumberFormatException nfe) {
-			nfe.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -133,9 +134,9 @@ public class WeatherConfig {
 		try {
 			result = Double.parseDouble(
 					wProps.getProperty("climate_arctic_base_temp"));
-		} catch (NumberFormatException nfe) {
+		} catch (Exception e) {
 			result = WeatherGeneratorConstants.CLIMATE_ARCTIC_BASE_TEMP;
-			nfe.printStackTrace();
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -145,9 +146,9 @@ public class WeatherConfig {
 		try {
 			result = Double.parseDouble(wProps.getProperty("climate_temperate_base_temp"));
 
-		} catch (NumberFormatException nfe) {
+		} catch (Exception e) {
 			result = WeatherGeneratorConstants.CLIMATE_TEMPERATE_BASE_TEMP;
-			nfe.printStackTrace();
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -157,9 +158,9 @@ public class WeatherConfig {
 		try {
 			result = Double.parseDouble(
 					wProps.getProperty("climate_tropical_base_temp"));
-		} catch (NumberFormatException nfe) {
+		} catch (Exception e) {
 			result = WeatherGeneratorConstants.CLIMATE_TROPICAL_BASE_TEMP;
-			nfe.printStackTrace();
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -169,9 +170,9 @@ public class WeatherConfig {
 		try {
 			result = Double
 					.parseDouble(wProps.getProperty("temp_bonus_winter"));
-		} catch (NumberFormatException nfe) {
+		} catch (Exception e) {
 			result = WeatherGeneratorConstants.TEMP_BONUS_WINTER;
-			nfe.printStackTrace();
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -181,9 +182,9 @@ public class WeatherConfig {
 		try {
 			result = Double
 					.parseDouble(wProps.getProperty("temp_bonus_spring"));
-		} catch (NumberFormatException nfe) {
+		} catch (Exception e) {
 			result = WeatherGeneratorConstants.TEMP_BONUS_SPRING;
-			nfe.printStackTrace();
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -193,9 +194,9 @@ public class WeatherConfig {
 		try {
 			result = Double
 					.parseDouble(wProps.getProperty("temp_bonus_summer"));
-		} catch (NumberFormatException nfe) {
+		} catch (Exception e) {
 			result = WeatherGeneratorConstants.TEMP_BONUS_SUMMER;
-			nfe.printStackTrace();
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -205,9 +206,9 @@ public class WeatherConfig {
 		try {
 			result = Double
 					.parseDouble(wProps.getProperty("temp_bonus_fall"));
-		} catch (NumberFormatException nfe) {
+		} catch (Exception e) {
 			result = WeatherGeneratorConstants.TEMP_BONUS_FALL;
-			nfe.printStackTrace();
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -216,9 +217,9 @@ public class WeatherConfig {
 		double result = 0.0;
 		try {
 			result = Double.parseDouble(wProps.getProperty("temp_bonus_wet"));
-		} catch (NumberFormatException nfe) {
+		} catch (Exception e) {
 			result = WeatherGeneratorConstants.TEMP_BONUS_WET;
-			nfe.printStackTrace();
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -227,9 +228,9 @@ public class WeatherConfig {
 		double result = 0.0;
 		try {
 			result = Double.parseDouble(wProps.getProperty("temp_bonus_dry"));
-		} catch (NumberFormatException nfe) {
+		} catch (Exception e) {
 			result = WeatherGeneratorConstants.TEMP_BONUS_DRY;
-			nfe.printStackTrace();
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -239,9 +240,9 @@ public class WeatherConfig {
 		try {
 			result = Double.parseDouble(
 					wProps.getProperty("humidity_bonus_winter"));
-		} catch (NumberFormatException nfe) {
+		} catch (Exception e) {
 			result = WeatherGeneratorConstants.HUMIDITY_BONUS_WINTER;
-			nfe.printStackTrace();
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -251,9 +252,9 @@ public class WeatherConfig {
 		try {
 			result = Double.parseDouble(
 					wProps.getProperty("humidity_bonus_spring"));
-		} catch (NumberFormatException nfe) {
+		} catch (Exception e) {
 			result = WeatherGeneratorConstants.HUMIDITY_BONUS_SPRING;
-			nfe.printStackTrace();
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -263,9 +264,9 @@ public class WeatherConfig {
 		try {
 			result = Double.parseDouble(
 					wProps.getProperty("humidity_bonus_summer"));
-		} catch (NumberFormatException nfe) {
+		} catch (Exception e) {
 			result = WeatherGeneratorConstants.HUMIDITY_BONUS_SUMMER;
-			nfe.printStackTrace();
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -275,9 +276,9 @@ public class WeatherConfig {
 		try {
 			result = Double
 					.parseDouble(wProps.getProperty("humidity_bonus_fall"));
-		} catch (NumberFormatException nfe) {
+		} catch (Exception e) {
 			result = WeatherGeneratorConstants.HUMIDITY_BONUS_FALL;
-			nfe.printStackTrace();
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -287,9 +288,9 @@ public class WeatherConfig {
 		try {
 			result = Double
 					.parseDouble(wProps.getProperty("humidity_bonus_wet"));
-		} catch (NumberFormatException nfe) {
+		} catch (Exception e) {
 			result = WeatherGeneratorConstants.HUMIDITY_BONUS_WET;
-			nfe.printStackTrace();
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -299,9 +300,9 @@ public class WeatherConfig {
 		try {
 			result = Double
 					.parseDouble(wProps.getProperty("humidity_bonus_dry"));
-		} catch (NumberFormatException nfe) {
+		} catch (Exception e) {
 			result = WeatherGeneratorConstants.HUMIDITY_BONUS_DRY;
-			nfe.printStackTrace();
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -311,9 +312,9 @@ public class WeatherConfig {
 		try {
 			result = Double
 					.parseDouble(wProps.getProperty("temp_bonus_rain"));
-		} catch (NumberFormatException nfe) {
+		} catch (Exception e) {
 			result = WeatherGeneratorConstants.TEMP_BONUS_RAIN;
-			nfe.printStackTrace();
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -323,9 +324,9 @@ public class WeatherConfig {
 		try {
 			result = Double
 					.parseDouble(wProps.getProperty("temp_bonus_snow"));
-		} catch (NumberFormatException nfe) {
+		} catch (Exception e) {
 			result = WeatherGeneratorConstants.TEMP_BONUS_SNOW;
-			nfe.printStackTrace();
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -335,9 +336,9 @@ public class WeatherConfig {
 		try {
 			result = Double
 					.parseDouble(wProps.getProperty("temp_bonus_sunny"));
-		} catch (NumberFormatException nfe) {
+		} catch (Exception e) {
 			result = WeatherGeneratorConstants.TEMP_BONUS_SUNNY;
-			nfe.printStackTrace();
+			e.printStackTrace();
 		}
 		return result;
 	}

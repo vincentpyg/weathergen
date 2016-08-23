@@ -1,9 +1,19 @@
-package org.vg.weathergen.gen;
+package main.java.weathergen.gen;
 
-import org.vg.weathergen.dto.Environment;
+import main.java.weathergen.dto.Environment;
 
+/***
+ * Factory class for generating different types of weather generators
+ * @author vincentg
+ *
+ */
 public class WeatherFactory {
 
+	/***
+	 * Creates a weather generator based on the environment
+	 * @param env Environment
+	 * @return Weather generator
+	 */
 	public WeatherGeneratorIF getWeatherGenerator(Environment env) {
 
 		WeatherGeneratorIF wgen = null;

@@ -1,10 +1,8 @@
-package main.java.weathergen.dto;
+package weathergen.dto;
 
-import java.util.Arrays;
-
-import main.java.weathergen.enums.ClimateType;
-import main.java.weathergen.enums.HemispherePart;
-import main.java.weathergen.utils.WeatherConfig;
+import weathergen.enums.ClimateType;
+import weathergen.enums.HemispherePart;
+import weathergen.utils.WeatherConfig;
 
 /***
  * Class used to store envrionment conditions like latitude, longitude, etc.

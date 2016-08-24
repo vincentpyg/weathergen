@@ -1,6 +1,6 @@
-package main.java.weathergen.gen;
+package weathergen.gen;
 
-import main.java.weathergen.dto.Environment;
+import weathergen.dto.Environment;
 
 /***
  * Factory class for generating different types of weather generators

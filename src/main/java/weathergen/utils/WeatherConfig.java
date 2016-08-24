@@ -1,4 +1,4 @@
-package main.java.weathergen.utils;
+package weathergen.utils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,7 +18,7 @@ public class WeatherConfig {
 	public WeatherConfig(File propertyFile) {
 		wProps = new Properties();
 		try {
-				wProps.load(new FileInputStream(propertyFile));
+			wProps.load(new FileInputStream(propertyFile));
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		}

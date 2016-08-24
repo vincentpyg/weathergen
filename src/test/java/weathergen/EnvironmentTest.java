@@ -1,4 +1,4 @@
-package test.java;
+package weathergen;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -8,10 +8,10 @@ import org.apache.commons.io.IOUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
-import main.java.weathergen.dto.Environment;
-import main.java.weathergen.enums.ClimateType;
-import main.java.weathergen.enums.HemispherePart;
-import main.java.weathergen.utils.WeatherConfig;
+import weathergen.dto.Environment;
+import weathergen.enums.ClimateType;
+import weathergen.enums.HemispherePart;
+import weathergen.utils.WeatherConfig;
 
 public class EnvironmentTest {
 

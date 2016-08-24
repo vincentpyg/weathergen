@@ -1,4 +1,4 @@
-package main.java.weathergen.gen;
+package weathergen.gen;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -6,10 +6,10 @@ import java.util.Calendar;
 import java.util.Random;
 import java.util.TimeZone;
 
-import main.java.weathergen.dto.Environment;
-import main.java.weathergen.enums.SeasonType;
-import main.java.weathergen.enums.WeatherType;
-import main.java.weathergen.utils.WeatherConfig;
+import weathergen.dto.Environment;
+import weathergen.enums.SeasonType;
+import weathergen.enums.WeatherType;
+import weathergen.utils.WeatherConfig;
 
 /**
  * Weather Generator that generates the weather for Arctic climates

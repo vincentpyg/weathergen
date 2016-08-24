@@ -1,4 +1,4 @@
-package main.java.weathergen;
+package weathergen;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -8,10 +8,10 @@ import java.io.FileWriter;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-import main.java.weathergen.dto.Environment;
-import main.java.weathergen.gen.WeatherFactory;
-import main.java.weathergen.gen.WeatherGeneratorIF;
-import main.java.weathergen.utils.WeatherConfig;
+import weathergen.dto.Environment;
+import weathergen.gen.WeatherFactory;
+import weathergen.gen.WeatherGeneratorIF;
+import weathergen.utils.WeatherConfig;
 
 public class WeatherDriver {
 

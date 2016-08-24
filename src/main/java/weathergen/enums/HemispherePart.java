@@ -1,4 +1,4 @@
-package main.java.weathergen.enums;
+package weathergen.enums;
 
 public enum HemispherePart {
 	CENTER,

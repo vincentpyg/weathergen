@@ -1,4 +1,4 @@
-package main.java.weathergen.utils;
+package weathergen.utils;
 
 /***
  * Fallback constant values

@@ -1,4 +1,4 @@
-package main.java.weathergen.gen;
+package weathergen.gen;
 
 import java.util.Calendar;
 

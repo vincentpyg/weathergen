@@ -1,6 +1,6 @@
 # weathergen
 
-WeatherGen tries to determine Environment conditions given longitude, latitute and date, and tries to simulate what the Weather would be like in those conditions.
+WeatherGen tries to determine Environment conditions given longitude, latitute, elevation and date, and tries to simulate what the weather would be like, given those conditions.
 
 ## build
 mvn clean package shade:shade
